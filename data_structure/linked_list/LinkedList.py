@@ -7,10 +7,13 @@ class LinkedList:
     def __init__ (self, data):
         self.head = Node(data)
     def add (self, data): # 뒤에 삽입
-        node = self.head
-        while node.next:
-            node = node.next
-        node.next = Node(data)  
+        if self.head == None:
+            self.head = Node(data)
+        else:
+            node = self.head
+            while node.next:
+                node = node.next
+            node.next = Node(data)  
     def desc (self): # 데이터 출력
         node = self.head
         while node:
