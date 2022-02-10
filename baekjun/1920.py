@@ -1,5 +1,4 @@
 import sys
-from xml.etree.ElementInclude import include
 
 numberN = int(sys.stdin.readline())
 numberNList = sys.stdin.readline()
