@@ -1,3 +1,5 @@
+import sys
+
 class Heap:
     def __init__(self, data):
         self.heapArray = list()
@@ -79,3 +81,4 @@ class Heap:
                         self.heapArray[poppedIndex], self.heapArray[leftChildIndex] = self.heapArray[leftChildIndex], self.heapArray[poppedIndex]
                         poppedIndex = leftChildIndex   
         return returnedData     
+
