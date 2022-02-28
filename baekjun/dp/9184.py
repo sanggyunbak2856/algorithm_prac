@@ -9,7 +9,6 @@ for i in range(1, 21):
             else:
                 dp[i][j][k] = dp[i - 1][j][k] + dp[i - 1][j - 1][k] + dp[i - 1][j][k - 1] - dp[i - 1][j - 1][k - 1]
 
-print(dp[10][4][6])
 while True:
     nums = sys.stdin.readline().split("\n")[0].split(" ")
     nums = list(map(int, nums))
