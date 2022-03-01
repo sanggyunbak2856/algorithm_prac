@@ -15,9 +15,9 @@ while True:
     
     if nums[0] == -1 and nums[1] == -1 and nums[2] == -1:
         break
-    elif nums[0] > 20 or nums[1] > 20 or nums[2] > 20:
-        print("w(%d, %d, %d) = %d" % (nums[0], nums[1], nums[2], dp[20][20][20]))
     elif nums[0] <= 0 or nums[1] <= 0 or nums[2] <= 0:
         print("w(%d, %d, %d) = %d" % (nums[0], nums[1], nums[2], dp[0][0][0]))
+    elif nums[0] > 20 or nums[1] > 20 or nums[2] > 20:
+        print("w(%d, %d, %d) = %d" % (nums[0], nums[1], nums[2], dp[20][20][20]))
     else:
         print("w(%d, %d, %d) = %d" % (nums[0], nums[1], nums[2], dp[nums[0]][nums[1]][nums[2]]))
