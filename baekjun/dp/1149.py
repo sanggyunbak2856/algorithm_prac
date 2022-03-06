@@ -1,34 +1,13 @@
 import sys
 
 n = int(sys.stdin.readline())
-dp = [0] * n
-
-firstCost = list(map(int, sys.stdin.readline().split('\n')[0].split(" ")))
-minIndex = 0
-
-for i in range(len(firstCost)):
-    if firstCost[i] < firstCost[minIndex]:
-        minIndex = i
-dp[0] = firstCost[minIndex]
+dp = [[0, 0, 0] for i in range(n)]
+numbers = [list(map(int, sys.stdin.readline().split('\n')[0].split(" "))) for i in range(n)]
+dp[0][0], dp[0][1], dp[0][2] = numbers[0][0], numbers[0][1], numbers[0][2]
 
 for i in range(1, n):
-    cost = list(map(int, sys.stdin.readline().split('\n')[0].split(" ")))
-    if minIndex == 0:
-        if cost[1] < cost[2]:
-            minIndex = 1
-        else:
-            minIndex = 2
-    elif minIndex == 1:
-        if cost[0] < cost[2]:
-            minIndex = 0
-        else:
-            minIndex = 2
-    elif minIndex == 2:
-        if cost[0] < cost[1]:
-            minIndex = 0
-        else:
-            minIndex = 1
-    dp[i] = dp[i - 1] + cost[minIndex]
-    
+    dp[i][0] = min(dp[i-1][1], dp[i-1][2]) + numbers[i][0]
+    dp[i][1] = min(dp[i-1][0], dp[i-1][2]) + numbers[i][1]
+    dp[i][2] = min(dp[i-1][0], dp[i-1][1]) + numbers[i][2]
 
-print(dp[-1])
+print(min(dp[n - 1]))
