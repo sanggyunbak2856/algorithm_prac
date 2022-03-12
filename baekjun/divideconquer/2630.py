@@ -13,6 +13,7 @@ def paperNum(x, y, size):
                 paperNum(x + (size // 2), y, size//2)
                 paperNum(x , y + (size // 2), size//2)
                 paperNum(x + (size//2), y + (size//2), size//2)
+                return
     if color == 0:
         white += 1
         return
