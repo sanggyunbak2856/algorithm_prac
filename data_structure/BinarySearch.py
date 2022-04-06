@@ -17,6 +17,4 @@ def binarySearch(data, search):
 
 data = [1, 3, 5, 6, 7, 9, 14, 16, 17, 19, 23, 27]
 
-print(binarySearch(data, 9))
-print(binarySearch(data, 11))
     
